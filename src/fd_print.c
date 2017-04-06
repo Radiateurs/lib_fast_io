@@ -14,7 +14,7 @@ int		fd_put_char(int fd, char c)
   return (write(fd, &c, 1));
 }
 
-int		fd_putstr(int fd, char *str)
+int		fd_put_str(int fd, char *str)
 {
   int		i = 0;
 
@@ -34,7 +34,7 @@ int		fd_put_nbr(int fd, int nb)
   if (nb < 0)
     {
       nb *= -1;
-      fd_putchar(fd, '-');
+      fd_put_char(fd, '-');
       put++;
     }
   while (nb / div > 9)

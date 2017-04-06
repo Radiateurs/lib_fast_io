@@ -10,7 +10,7 @@ AR =		ar rc
 
 RM =		rm -f
 
-LIB =		lib_fast_io.a
+LIB =		libfast_io.a
 
 SRC =		src/fd_print.c		\
 		src/print.c		\
