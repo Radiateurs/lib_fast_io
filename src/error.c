@@ -14,9 +14,9 @@ int		err_put_char(char c)
   return (fd_put_char(2, c));
 }
 
-int		err_putstr(char *str)
+int		err_put_str(char *str)
 {
-  return (fd_putstr(2, str));
+  return (fd_put_str(2, str));
 }
 
 int		err_put_nbr(int nb)
