@@ -56,7 +56,7 @@ int		fd_fast_printf(int fd, char *str, ...)
   int		printed = 0;
 
   va_start(va, str);
-  while (str[i] != 0)
+  while (str[i] != '\0')
     {
       if (str[i] == '%')
 	{

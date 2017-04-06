@@ -7,7 +7,7 @@
 ** Started the 06-04-2017
 */
 
-#include	"print.h"
+#include	"std.h"
 
 int		std_put_char(char c)
 {
@@ -29,6 +29,7 @@ int		std_fast_printf(char *str, ...)
   va_list	args;
   int		p;
   
+  va_start(args, str);
   p = fd_fast_printf(1, str, args);
   va_end(args);
   return (p);

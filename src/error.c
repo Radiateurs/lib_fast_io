@@ -28,7 +28,8 @@ int		err_fast_printf(char *str, ...)
 {
   va_list	args;
   int		p;
-  
+
+  va_start(args, str);
   p = fd_fast_printf(2, str, args);
   va_end(args);
   return (p);
