@@ -49,7 +49,7 @@ int		fd_put_nbr(int fd, int nb)
   return (put);
 }
 
-int		fd_fats_printf_va(int fd, char *str, va_list va)
+int		fd_fast_printf_va(int fd, char *str, va_list va)
 {
   int		i = 0;
   int		printed = 0;
