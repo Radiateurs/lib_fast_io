@@ -7,16 +7,16 @@
 ** Started the 06-04-2017
 */
 
-#include	"print.h"
+#include	"std.h"
 
 int		std_put_char(char c)
 {
   return (fd_put_char(1, c));
 }
 
-int		std_putstr(char *str)
+int		std_put_str(char *str)
 {
-  return (fd_putstr(1, str));
+  return (fd_put_str(1, str));
 }
 
 int		std_put_nbr(int nb)
@@ -30,7 +30,7 @@ int		std_fast_printf(char *str, ...)
   int		p;
 
   va_start(args, str);
-  p = fd_fast_printf(1, str, args);
+  p = fd_fast_printf_va(1, str, args);
   va_end(args);
   return (p);
 }

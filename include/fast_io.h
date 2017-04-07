@@ -10,7 +10,7 @@
 # define	__FAST_IO_H__
 
 # include	"./fd_print.h"
-# include	"./print.h"
+# include	"./std.h"
 # include	"./error.h"
 
 #endif

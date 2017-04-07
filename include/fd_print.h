@@ -51,6 +51,9 @@ int		fd_put_nbr(int fd, int nb);
 ** int nb is the number to print. Can be negative or equal to zero.
 */
 
+int		fd_fast_print_va(int fd, char *format, va_list va);
+// Called by all the X_fast_printf() function
+
 int		fd_fast_printf(int fd, char *format, ...);
 /*
 ** Purpose :
