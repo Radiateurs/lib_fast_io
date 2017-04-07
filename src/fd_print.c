@@ -49,13 +49,11 @@ int		fd_put_nbr(int fd, int nb)
   return (put);
 }
 
-int		fd_fast_printf(int fd, char *str, ...)
+int		fd_fats_printf_va(int fd, char *str, va_list va)
 {
-  va_list	va;
   int		i = 0;
   int		printed = 0;
 
-  va_start(va, str);
   while (str[i] != 0)
     {
       if (str[i] == '%')
@@ -78,11 +76,22 @@ int		fd_fast_printf(int fd, char *str, ...)
 	      break;
 	    default:
 	      break;
-	      }
+	    }
 	}
       else
 	printed += fd_put_char(fd, str[i]);
       i++;
     }
+  return (printed);
+}
+
+int		fd_fast_printf(int fd, char *str, ...)
+{
+  va_list	va;
+  int		printed;
+
+  va_start(va, str);
+  printed = fd_fast_printf_va(fd, str, va);
+  va_end(va);
   return (printed);
 }
