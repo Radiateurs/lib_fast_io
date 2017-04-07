@@ -58,7 +58,7 @@ int		fd_fats_printf_va(int fd, char *str, va_list va)
     {
       if (str[i] == '%')
 	{
-	  switch (str[i])
+	  switch (str[i + 1])
 	    {
 	    case '%':
 	      printed += fd_put_char(fd, '%');
@@ -67,16 +67,15 @@ int		fd_fats_printf_va(int fd, char *str, va_list va)
 	      printed += fd_put_char(fd, (char)va_arg(va, int));
 	      break;
 	    case 's':
-	      printed += fd_put_str(fd, va_arg(va, char*));
+	      printed += fd_put_str(fd, (char *)va_arg(va, char*));
 	      break;
 	    case 'i':
-	      printed += fd_put_nbr(fd, va_arg(va, int));
-	    case 'd':
-	      // Not implemented yet
+	      printed += fd_put_nbr(fd, (int)va_arg(va, int));
 	      break;
 	    default:
 	      break;
 	    }
+	  i++;
 	}
       else
 	printed += fd_put_char(fd, str[i]);

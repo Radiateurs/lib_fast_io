@@ -35,4 +35,7 @@ fclean:		clean
 
 re:		fclean all
 
-.PHONY:		all $(LIB) clean fclean re
+dbg:		CFLAGS += -g
+dbg:		re
+
+.PHONY:		all $(LIB) clean fclean re dbg
