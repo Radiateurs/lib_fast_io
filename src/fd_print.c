@@ -19,7 +19,7 @@ int		fd_put_str(int fd, char *str)
   int		i = 0;
 
   if (str == NULL)
-    return (fd_put_str("null"));
+    return (fd_put_str(fd, "null"));
   while (str[i] != '\0')
     {
       fd_put_char(fd, str[i]);
