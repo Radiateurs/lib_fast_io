@@ -37,9 +37,9 @@ int		fd_put_nbr(int fd, int nb)
       fd_put_char(fd, '-');
       put++;
     }
-  while (nb / div > 9)
+  while (nb / div > 10)
     div *= 10;
-  while (div < 0)
+  while (div > 0)
     {
       fd_put_char(fd, (nb / div) + 48);
       nb %= div;
